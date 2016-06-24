@@ -1,3 +1,4 @@
+'use strict'
 module.exports = function(grunt) {
 
     // 1. All configuration goes here
@@ -7,7 +8,8 @@ module.exports = function(grunt) {
         imagemin: {
             index: {
                 options: {
-                    optimizationLevel: 5
+                    optimizationLevel: 5,
+                    progressive: true
                 },
                 files: [{
                     expand: true,
@@ -18,7 +20,8 @@ module.exports = function(grunt) {
             },
             pizza: {
                 options: {
-                    optimizationLevel: 5
+                    optimizationLevel: 5,
+                    progressive: true
                 },
                 files: [{
                     expand: true,
@@ -82,8 +85,7 @@ module.exports = function(grunt) {
                     {src: ['src/views/css/bootstrap-grid'], dest: 'dist/views/css/bootstrap-grid.min.css'}
                 ]
             }
-        }
-
+        },
     });
 
     // 3. Where we tell Grunt we plan to use this plug-in.
