@@ -513,8 +513,8 @@ function movePizza() {
 
 // Moves the sliding background pizzas based on scroll position
 function updatePositions() {
-  // frame++;
-  // window.performance.mark("mark_start_frame");
+  frame++;
+  window.performance.mark("mark_start_frame");
   //Get Elements by class instead of query selector
   var items = document.getElementsByClassName('mover');
 
@@ -537,12 +537,12 @@ function updatePositions() {
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
   // Super easy to create custom metrics.
-  // window.performance.mark("mark_end_frame");
-  // window.performance.measure("measure_frame_duration", "mark_start_frame", "mark_end_frame");
-  // if (frame % 10 === 0) {
-  //   var timesToUpdatePosition = window.performance.getEntriesByName("measure_frame_duration");
-  //   logAverageFrame(timesToUpdatePosition);
-  // }
+  window.performance.mark("mark_end_frame");
+  window.performance.measure("measure_frame_duration", "mark_start_frame", "mark_end_frame");
+  if (frame % 10 === 0) {
+    var timesToUpdatePosition = window.performance.getEntriesByName("measure_frame_duration");
+    logAverageFrame(timesToUpdatePosition);
+  }
    window.animating = false;
 }
 
